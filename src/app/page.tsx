@@ -29,7 +29,7 @@ export default function Home() {
             <a href="https://www.divisioncero.com/conan/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
               <b>conan </b>
             </a> 
-            - System for computer tracking of pedophiles, but it is genuinely useful for tracking any cybercrime
+            - System for computer tracking of pedophiles, but it is genuinely useful for tracking any cybercrime.
           </div>
           <div className="my-4 text-xl">
             🛡️ ./
