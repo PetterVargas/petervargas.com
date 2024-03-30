@@ -12,7 +12,7 @@ export default function Home() {
       <div className="z-10 max-w-6xl w-full items-center justify-between font-mono text-sm lg:flex">
         <div className="text-center">
           <h1 className="my-9 text-3xl">
-            I'm <b>Peter Vargas</b> 🤘🏽
+            I&apos;m <b>Peter Vargas</b> 🤘🏽
           </h1>
           <div className="my-4 text-xl">
             I am a learner every day 🧑🏻‍💻, passionate about creating things that contribute to the world 🌎.
@@ -49,7 +49,7 @@ export default function Home() {
             I am working on bringing these projects to the open-source world, but with an educational focus.
           </div>
           <div className="my-4 text-xl">
-            Oh, I almost forgot, I like coffee and I'm from Colombia and I live in Pereira and Caicedonia.
+            Oh, I almost forgot, I like coffee and I&apos;m from Colombia and I live in Pereira and Caicedonia.
           </div>
         </div>
       </div>
