@@ -8,7 +8,7 @@ const InstagramProfile: React.FC = () => {
       <div className="relative w-[300px] h-[300px] rounded-full overflow-hidden">
         <div className={styles['instagram-border']}>
           <Image
-            src="/profile.png"
+            src="/profile.webp"
             alt="Profile Peter Vargas"
             width={300}
             height={300}
