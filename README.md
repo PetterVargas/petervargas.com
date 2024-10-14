@@ -1,5 +1,5 @@
 # petervargas.com
-Personal site of Peter Vargas
+Personal site of Peter Vargas.
 
 ## Getting Started
 
