@@ -1,2 +1,9 @@
-compatibility_flags = [ "nodejs_compat" ]
-compatibility_date = "2024-09-23"
+[build]
+command = "npm run build"
+
+[build.upload]
+format = "modules"
+main = "./worker.mjs"
+
+[compatibility]
+nodejs_compat = true
