@@ -11,8 +11,8 @@
   align-items: center;
   justify-items: center;
   min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
+  padding: 40px; /* Reducido de 80px para dar más espacio al contenido */
+  gap: 48px; /* Reducido de 64px para ajustar mejor el espacio vertical */
   font-family: var(--font-geist-sans);
 }
 
@@ -30,8 +30,42 @@
 .main {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  align-items: center; /* Centrar horizontalmente todo el contenido */
+  text-align: center; /* Centrar el texto en todos los elementos */
+  gap: 24px; /* Reducido de 32px para ajustar mejor el espacio entre elementos */
   grid-row-start: 2;
+  width: 100%;
+  max-width: 800px; /* Limitar el ancho máximo para mejor legibilidad */
+}
+
+.main > div {
+  width: 100%; /* Asegurar que todos los divs hijos ocupen el ancho completo */
+  text-align: center; /* Forzar centrado de texto en todos los divs */
+}
+
+/* Estilo para los iconos sociales */
+.socialIconsContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0.5rem 0; /* Reducido de 1rem a 0.5rem para acercar al nombre */
+}
+
+.socialIconsRow {
+  display: flex;
+  gap: 1.5rem; 
+}
+
+@media (min-width: 768px) {
+  .socialIconsRow {
+    gap: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .socialIconsRow {
+    gap: 2rem;
+  }
 }
 
 .main ol {
