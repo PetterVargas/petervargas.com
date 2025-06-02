@@ -25,25 +25,25 @@ export default function Home() {
             I created:
           </div>
           <div className="my-4 text-xl">
-            🕵️‍♂️ ./
-            <a href="https://www.divisioncero.com/conan/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
-              <b>conan </b>
-            </a> 
-            - System for computer tracking of pedophiles, but it is genuinely useful for tracking any cybercrime.
-          </div>
-          <div className="my-4 text-xl">
-            📖 ./
-            <a href="https://kudo.petervargas.com" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
-              <b>kudo </b>
-            </a>
-            - The open-source and practical book on cybersecurity. It is still in development.
-          </div>
-          <div className="my-4 text-xl">
             🛡️ ./
             <a href="https://www.divisioncero.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
               <b>divisioncero </b>
             </a>
              - Business project in my life; I want to make cybersecurity more accessible to anyone.
+          </div>
+          <div className="my-4 text-xl">
+            📖 ./
+            <a href="https://kudo.divisioncero.com" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
+              <b>kudo </b>
+            </a>
+            - The open-source and practical book on cybersecurity.
+          </div>
+          <div className="my-4 text-xl">
+            🕵️‍♂️ ./
+            <a href="https://docs.divisioncero.com/docs/cyberacademy" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
+              <b>conan </b>
+            </a> 
+            - System for computer tracking of pedophiles, but it is genuinely useful for tracking any cybercrime.
           </div>
           <div className="my-4 text-xl">
             I am working on bringing these projects to the open-source world, but with an educational focus.
