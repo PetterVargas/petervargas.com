@@ -21,7 +21,7 @@ export default function Home() {
         </div>
         <div className="my-4 text-xl">
           I&apos;m a cybersecurity engineer and I love my family; 
-          I've been a Detective Conan fan for as long as I can remember.
+          I&apos;ve been a Detective Conan fan for as long as I can remember.
         </div>
         <div className="my-4 text-xl text-center w-full">
           I created 🧑🏻‍💻:
@@ -83,8 +83,8 @@ const SocialIconsRow = () => {
             <Image 
               src={item.icon} 
               alt={item.name} 
-              width={30} // Reducido de 38px a 30px
-              height={30} // Reducido de 38px a 30px
+              width={30}
+              height={30}
               className="p-1"
             />
           </a>
