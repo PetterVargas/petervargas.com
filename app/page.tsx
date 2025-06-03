@@ -51,7 +51,7 @@ export default function Home() {
           I&apos;m working on developing these projects with an educational focus.
         </div>
         <div className="my-4 text-xl text-center w-full">
-          Ah, casi lo olvido, me encanta el café y nací en Colombia 🇨🇴 (Pereira y Caicedonia)
+          Oh, I almost forgot, I love coffee and I was born in Colombia 🇨🇴 (Pereira and Caicedonia)
         </div>
       </main>
     </div>
