@@ -28,21 +28,21 @@ export default function Home() {
         </div>
         <div className="my-4 text-xl text-center w-full">
           🛡️ ./
-          <a href="https://divisioncero.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
+          <a href="https://divisioncero.com/?utm_source=petervargas.com&utm_medium=text_link&utm_campaign=personal_website" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
             <b>divisioncero </b>
           </a>
             - Business project in my life; I want to make cybersecurity more accessible to anyone.
         </div>
         <div className="my-4 text-xl text-center w-full">
           📖 ./
-          <a href="https://kudo.divisioncero.com" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
+          <a href="https://docs.divisioncero.com/docs/kudo?utm_source=petervargas.com&utm_medium=text_link&utm_campaign=personal_website" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
             <b>kudo </b>
           </a>
           - The open-source and practical book on cybersecurity.
         </div>
         <div className="my-4 text-xl text-center w-full">
           🕵️‍♂️ ./
-          <a href="https://docs.divisioncero.com/docs/cyberacademy" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
+          <a href="https://divisioncero.com/home/conan?utm_source=petervargas.com&utm_medium=text_link&utm_campaign=personal_website" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
             <b>conan </b>
           </a> 
           - System for computer tracking of pedophiles, but it is genuinely useful for tracking any cybercrime.
@@ -62,6 +62,7 @@ export default function Home() {
 const SocialIconsRow = () => {
   const socialData = [
     { name: 'LinkedIn', icon: '/icons/linkedin.png', link: 'https://www.linkedin.com/in/petervargas/' },
+    { name: 'DivisionCero', icon: '/icons/divisioncero.png', link: 'https://divisioncero.com/?utm_source=petervargas.com&utm_medium=social&utm_campaign=personal_website' },
     { name: 'X', icon: '/icons/twitter-x.png', link: 'https://twitter.com/divisioncero/' },
     { name: 'GitHub', icon: '/icons/github.png', link: 'https://github.com/PetterVargas/' },
     { name: 'Instagram', icon: '/icons/instagram.png', link: 'https://www.instagram.com/divisioncero/' },
