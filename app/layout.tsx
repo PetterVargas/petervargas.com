@@ -1,46 +1,16 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import Script from "next/script";
+import { JetBrains_Mono } from 'next/font/google';
+import { Provider } from '@/components/provider';
+import './global.css';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export const metadata: Metadata = {
-  title: "Peter Vargas - Cybersecurity",
-  description: "DivisionCero | Kudo | Conan",
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function Layout({ children }: LayoutProps<'/'>) {
   return (
-    <html lang="en">
-      <head>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-39QRST627Z"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-39QRST627Z');
-          `}
-        </Script>
-      </head>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+    <html lang="en" className={jetbrainsMono.className} suppressHydrationWarning>
+      <body className="flex flex-col min-h-screen">
+        <Provider>{children}</Provider>
       </body>
     </html>
   );
