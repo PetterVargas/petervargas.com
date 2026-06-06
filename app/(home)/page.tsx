@@ -52,7 +52,11 @@ export default function HomePage() {
         - System for computer tracking of pedophiles, but it is genuinely useful for tracking any cybercrime.
       </div>
       <div className="my-4 text-xl text-center w-full">
-        I&apos;m working on developing these projects with an educational focus.
+        🛠️ ./
+        <a href="https://divisioncero.com/herramientas?utm_source=petervargas.com&utm_medium=text_link&utm_campaign=personal_website" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
+          <b>Other tools</b>
+        </a>
+        - Various tools for Cybersecurity tasks and research.
       </div>
       <div className="my-4 text-xl text-center w-full">
         Oh, I almost forgot, I love coffee and I was born in Colombia 🇨🇴 (Pereira and Caicedonia)
