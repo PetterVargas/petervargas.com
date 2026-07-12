@@ -1,11 +1,16 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function HomePage() {
   return (
     <div className="flex flex-col justify-center text-center flex-1">
       <div>
         <h1 className="my-2 text-3xl">
-          I&apos;m <b>Peter Vargas</b> 🤘🏽
+          I&apos;m{' '}
+          <Link href="/docs" className="text-emerald-400 hover:underline">
+            <b>Peter Vargas</b>
+          </Link>{' '}
+          🤘🏽
         </h1>
       </div>
 
@@ -53,7 +58,7 @@ export default function HomePage() {
       </div>
       <div className="my-4 text-xl text-center w-full">
         🛠️ ./
-        <a href="https://divisioncero.com/herramientas?utm_source=petervargas.com&utm_medium=text_link&utm_campaign=personal_website" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
+        <a href="https://herramientas.divisioncero.com/?utm_source=petervargas.com&utm_medium=text_link&utm_campaign=personal_website" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
           <b>Other tools</b>
         </a>
         - Various tools for Cybersecurity tasks and research.
@@ -61,9 +66,51 @@ export default function HomePage() {
       <div className="my-4 text-xl text-center w-full">
         Oh, I almost forgot, I love coffee and I was born in Colombia 🇨🇴 (Pereira and Caicedonia)
       </div>
+
+      <div className="my-6">
+        <ResumeLinksRow />
+      </div>
+
+      <div className="my-2">
+        <BlogLinkRow />
+      </div>
     </div>
   );
 }
+
+const BlogLinkRow = () => {
+  return (
+    <div className="flex justify-center">
+      <Link
+        href="/blog"
+        className="rounded-full border px-4 py-2 text-sm font-medium transition-colors hover:bg-fd-accent hover:text-fd-accent-foreground"
+      >
+        📝 Blog
+      </Link>
+    </div>
+  );
+};
+
+const ResumeLinksRow = () => {
+  const resumeLinks = [
+    { name: 'Experiencia', href: '/docs/experiencia' },
+    { name: 'Educación', href: '/docs/educacion' },
+  ];
+
+  return (
+    <div className="flex flex-wrap justify-center gap-3">
+      {resumeLinks.map((item) => (
+        <a
+          key={item.href}
+          href={item.href}
+          className="rounded-full border px-4 py-2 text-sm font-medium transition-colors hover:bg-fd-accent hover:text-fd-accent-foreground"
+        >
+          {item.name}
+        </a>
+      ))}
+    </div>
+  );
+};
 
 const SocialIconsRow = () => {
   const socialData = [

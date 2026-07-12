@@ -3,4 +3,19 @@ title: Peter Vargas
 description: DivisionCero
 ---
 
-https://divisioncero.com/
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Briefcase, GraduationCap, NotebookPen } from 'lucide-react';
+
+Proyecto Principal [DivisionCero](https://divisioncero.com/)
+
+<Cards>
+  <Card icon={<Briefcase />} href="/docs/experiencia" title="Experiencia">
+    Más de 17 años de experiencia en Ciberseguridad, cibercrimen e investigación digital.
+  </Card>
+  <Card icon={<GraduationCap />} href="/docs/educacion" title="Educación">
+    Formación académica, habilidades y certificaciones.
+  </Card>
+  <Card icon={<NotebookPen />} href="/blog" title="Blog">
+    Notas sobre ciberseguridad, óptica personal y lo que voy aprendiendo en el camino.
+  </Card>
+</Cards>
