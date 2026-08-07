@@ -1,116 +1,85 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { HeroReveal } from '@/components/home-animations';
+import { HeroUniverse } from '@/components/hero-universe';
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col justify-center text-center flex-1">
-      <div>
-        <h1 className="my-2 text-3xl">
-          I&apos;m{' '}
-          <Link href="/docs" className="text-emerald-400 hover:underline">
-            <b>Peter Vargas</b>
-          </Link>{' '}
-          🤘🏽
-        </h1>
-      </div>
+    <div className="relative flex-1 flex flex-col">
+      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-fd-primary/5 via-transparent to-fd-secondary/5 pointer-events-none" />
+      <HeroUniverse className="fixed inset-0 -z-10 w-full h-full pointer-events-none opacity-70" />
+      <HeroReveal>
+      <div className="max-w-[65ch] w-full mx-auto flex-1 px-6 pt-36 sm:pt-40 pb-10">
+        <div className="overflow-hidden mb-6">
+          <h1
+            data-hero-line
+            className="text-4xl font-extrabold tracking-tight leading-tight motion-safe:opacity-0"
+          >
+            I&apos;m{' '}
+            <Link href="/docs" className="text-emerald-400 hover:underline">
+              <b>Peter Vargas</b>
+            </Link>{' '}
+            🤘🏽
+          </h1>
+        </div>
 
-      <div>
-        <SocialIconsRow />
-      </div>
+        <div data-hero-item className="mb-8 motion-safe:opacity-0">
+          <SocialIconsRow />
+        </div>
 
-      <div className="my-4 text-xl">
-        I learn every day, passionate about creating things that contribute to the world 🌎.
+        <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
+          I learn every day, passionate about creating things that contribute to the world 🌎.
+        </p>
+        <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
+          I&apos;m a cybersecurity engineer and I love my family;{' '}
+          I&apos;ve been a Detective Conan fan for as long as I can remember.
+        </p>
+        <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
+          I created 🧑🏻‍💻:
+        </p>
+        <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
+          🛡️ ./
+          <a href="https://divisioncero.com/?utm_source=petervargas.com&utm_medium=text_link&utm_campaign=personal_website" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
+            <b>divisioncero </b>
+          </a>
+          - Business project in my life; I want to make cybersecurity more accessible to anyone.
+        </p>
+        <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
+          📖 ./
+          <a href="https://kudo.divisioncero.com/?utm_source=petervargas.com&utm_medium=text_link&utm_campaign=personal_website" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
+            <b>kudo </b>
+          </a>
+          - The open-source and practical book on cybersecurity.
+        </p>
+        <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
+          🧑🏽‍🏫 ./
+          <a href="https://cyberacademy.divisioncero.com/?utm_source=petervargas.com&utm_medium=text_link&utm_campaign=personal_website" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
+            <b>cyberacademy </b>
+          </a>
+          - The open-source and practical platform for learning cybersecurity.
+        </p>
+        <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
+          🕵️‍♂️ ./
+          <a href="https://app.divisioncero.com/home/conan?utm_source=petervargas.com&utm_medium=text_link&utm_campaign=personal_website" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
+            <b>conan </b>
+          </a>
+          - System for computer tracking of pedophiles, but it is genuinely useful for tracking any cybercrime.
+        </p>
+        <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
+          🛠️ ./
+          <a href="https://herramientas.divisioncero.com/?utm_source=petervargas.com&utm_medium=text_link&utm_campaign=personal_website" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
+            <b>Other tools</b>
+          </a>
+          - Various tools for Cybersecurity tasks and research.
+        </p>
+        <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
+          Oh, I almost forgot, I love coffee and I was born in Colombia 🇨🇴 (Pereira and Caicedonia)
+        </p>
       </div>
-      <div className="my-4 text-xl">
-        I&apos;m a cybersecurity engineer and I love my family;{' '}
-        I&apos;ve been a Detective Conan fan for as long as I can remember.
-      </div>
-      <div className="my-4 text-xl text-center w-full">
-        I created 🧑🏻‍💻:
-      </div>
-      <div className="my-4 text-xl text-center w-full">
-        🛡️ ./
-        <a href="https://divisioncero.com/?utm_source=petervargas.com&utm_medium=text_link&utm_campaign=personal_website" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
-          <b>divisioncero </b>
-        </a>
-        - Business project in my life; I want to make cybersecurity more accessible to anyone.
-      </div>
-      <div className="my-4 text-xl text-center w-full">
-        📖 ./
-        <a href="https://kudo.divisioncero.com/?utm_source=petervargas.com&utm_medium=text_link&utm_campaign=personal_website" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
-          <b>kudo </b>
-        </a>
-        - The open-source and practical book on cybersecurity.
-      </div>
-      <div className="my-4 text-xl text-center w-full">
-        🧑🏽‍🏫 ./
-        <a href="https://cyberacademy.divisioncero.com/?utm_source=petervargas.com&utm_medium=text_link&utm_campaign=personal_website" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
-          <b>cyberacademy </b>
-        </a>
-        - The open-source and practical platform for learning cybersecurity.
-      </div>
-      <div className="my-4 text-xl text-center w-full">
-        🕵️‍♂️ ./
-        <a href="https://divisioncero.com/home/conan?utm_source=petervargas.com&utm_medium=text_link&utm_campaign=personal_website" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
-          <b>conan </b>
-        </a>
-        - System for computer tracking of pedophiles, but it is genuinely useful for tracking any cybercrime.
-      </div>
-      <div className="my-4 text-xl text-center w-full">
-        🛠️ ./
-        <a href="https://herramientas.divisioncero.com/?utm_source=petervargas.com&utm_medium=text_link&utm_campaign=personal_website" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
-          <b>Other tools</b>
-        </a>
-        - Various tools for Cybersecurity tasks and research.
-      </div>
-      <div className="my-4 text-xl text-center w-full">
-        Oh, I almost forgot, I love coffee and I was born in Colombia 🇨🇴 (Pereira and Caicedonia)
-      </div>
-
-      <div className="my-6">
-        <ResumeLinksRow />
-      </div>
-
-      <div className="my-2">
-        <BlogLinkRow />
-      </div>
+      </HeroReveal>
     </div>
   );
 }
-
-const BlogLinkRow = () => {
-  return (
-    <div className="flex justify-center">
-      <Link
-        href="/blog"
-        className="rounded-full border px-4 py-2 text-sm font-medium transition-colors hover:bg-fd-accent hover:text-fd-accent-foreground"
-      >
-        📝 Blog
-      </Link>
-    </div>
-  );
-};
-
-const ResumeLinksRow = () => {
-  const resumeLinks = [
-    { name: 'Experiencia', href: '/docs/experiencia' },
-    { name: 'Educación', href: '/docs/educacion' },
-  ];
-
-  return (
-    <div className="flex flex-wrap justify-center gap-3">
-      {resumeLinks.map((item) => (
-        <a
-          key={item.href}
-          href={item.href}
-          className="rounded-full border px-4 py-2 text-sm font-medium transition-colors hover:bg-fd-accent hover:text-fd-accent-foreground"
-        >
-          {item.name}
-        </a>
-      ))}
-    </div>
-  );
-};
 
 const SocialIconsRow = () => {
   const socialData = [
@@ -124,26 +93,24 @@ const SocialIconsRow = () => {
   ];
 
   return (
-    <div className="flex justify-center">
-      <div className="flex flex-row gap-2">
-        {socialData.map((item, index) => (
-          <a
-            key={index}
-            href={item.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-transform hover:scale-110"
-          >
-            <Image
-              src={item.icon}
-              alt={item.name}
-              width={30}
-              height={30}
-              className="p-1 invert dark:invert-0"
-            />
-          </a>
-        ))}
-      </div>
+    <div className="flex flex-wrap gap-2">
+      {socialData.map((item, index) => (
+        <a
+          key={index}
+          href={item.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="transition-transform hover:scale-110"
+        >
+          <Image
+            src={item.icon}
+            alt={item.name}
+            width={30}
+            height={30}
+            className="p-1 invert dark:invert-0"
+          />
+        </a>
+      ))}
     </div>
   );
 };

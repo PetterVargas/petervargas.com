@@ -11,7 +11,7 @@ export default function BlogIndexPage() {
   );
 
   return (
-    <main className="flex flex-col flex-1 w-full max-w-3xl mx-auto px-4 py-12">
+    <main className="flex flex-col flex-1 w-full max-w-3xl mx-auto px-4 pt-24 pb-12">
       <Link
         href="/"
         className="mb-8 inline-flex w-fit items-center gap-1 text-sm text-fd-muted-foreground hover:text-fd-foreground hover:underline"
