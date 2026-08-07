@@ -17,7 +17,7 @@ export default async function Page(props: {
 
   return (
     <>
-      <div className="w-full max-w-3xl mx-auto px-4 flex flex-col items-center py-12">
+      <div className="w-full max-w-3xl mx-auto px-4 flex flex-col items-center pt-24 pb-12">
         <Link
           href="/blog"
           className="mb-8 self-start inline-flex w-fit items-center gap-1 text-sm text-fd-muted-foreground hover:text-fd-foreground hover:underline"

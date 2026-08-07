@@ -4,6 +4,11 @@
 
 html {
   scrollbar-gutter: stable;
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
 }
 
 html > body[data-scroll-locked] {
