@@ -1,47 +1,90 @@
-# .
+# petervargas.com
 
-This is a Next.js application generated with
-[Create Fumadocs](https://github.com/fuma-nama/fumadocs).
+Sitio personal de **Peter Vargas** — Ingeniero en Ciberseguridad y fundador de
+[DivisionCero](https://divisioncero.com/), Kudo y CyberAcademy.
 
-It is a Next.js app with [Static Export](https://nextjs.org/docs/app/guides/static-exports) configured.
+Construido con [Next.js](https://nextjs.org) (App Router) y
+[Fumadocs](https://fumadocs.dev), exportado como sitio estático
+([Static Export](https://nextjs.org/docs/app/guides/static-exports)).
 
-Run development server:
+## Stack
+
+- **Next.js 16** (App Router, `output: 'export'`)
+- **Fumadocs** (`fumadocs-core`, `fumadocs-mdx`, `fumadocs-ui`) para el contenido en MDX y la búsqueda
+- **Tailwind CSS 4**
+- **GSAP** para animaciones del home
+- **@next/third-parties** (Google Analytics)
+- Gestor de paquetes: **pnpm**
+
+## Desarrollo
 
 ```bash
-npm run dev
-# or
+pnpm install
 pnpm dev
-# or
-yarn dev
 ```
 
-Open http://localhost:3000 with your browser to see the result.
+Abre http://localhost:3000 para ver el resultado.
 
-## Explore
+Otros comandos:
 
-In the project, you can see:
+```bash
+pnpm build         # build + export estático (carpeta `out/`)
+pnpm start          # sirve la carpeta `out/` generada
+pnpm types:check     # regenera tipos de Fumadocs y corre tsc --noEmit
+```
 
-- `lib/source.ts`: Code for content source adapter, [`loader()`](https://fumadocs.dev/docs/headless/source-api) provides the interface to access your content.
-- `lib/layout.shared.tsx`: Shared options for layouts, optional but preferred to keep.
+## Estructura del proyecto
 
-| Route                     | Description                                            |
-| ------------------------- | ------------------------------------------------------ |
-| `app/(home)`              | The route group for your landing page and other pages. |
-| `app/docs`                | The documentation layout and pages.                    |
-| `app/api/search/route.ts` | The Route Handler for search.                          |
+```
+app/
+  (home)/         # Landing, blog y galería de fotos
+    page.tsx
+    blog/
+    fotos/
+  docs/           # Layout y páginas de documentación (Fumadocs)
+  api/search/     # Route handler de búsqueda
+  og/             # Generación de imágenes OG (docs/blog)
+  llms.txt, llms-full.txt, llms.mdx/  # Salidas para consumo por LLMs
 
-### Fumadocs MDX
+content/
+  docs/           # index, proyectos, experiencia, educacion (MDX)
+  blog/           # posts del blog (MDX)
 
-A `source.config.ts` config file has been included, you can customise different options like frontmatter schema.
+components/       # UI: nav flotante, hero, galería, animaciones, mdx, search
+lib/
+  source.ts        # adaptador de contenido (loader de Fumadocs)
+  shared.ts         # metadata del sitio (nombre, descripción, URLs, redes)
+  layout.shared.tsx  # opciones de layout compartidas
+```
 
-Read the [Introduction](https://fumadocs.dev/docs/mdx) for further details.
+### Secciones del sitio
 
-## Learn More
+| Ruta                    | Descripción                                                        |
+| ------------------------ | ------------------------------------------------------------------- |
+| `/`                      | Landing page                                                        |
+| `/docs`                  | Perfil: proyectos, experiencia y educación                          |
+| `/blog`                  | Notas sobre ciberseguridad, óptica personal y aprendizaje continuo   |
+| `/fotos`                 | Galería de fotos                                                     |
+| `/api/search`            | Endpoint de búsqueda (Fumadocs)                                     |
+| `/og/docs`, `/og/blog`   | Imágenes Open Graph generadas dinámicamente                         |
+| `/llms.txt`, `/llms-full.txt`, `/llms.mdx` | Contenido del sitio en formato apto para LLMs           |
 
-To learn more about Next.js and Fumadocs, take a look at the following
-resources:
+## SEO
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js
-  features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [Fumadocs](https://fumadocs.dev) - learn about Fumadocs
+El sitio incluye buenas prácticas de SEO: metadata por página, JSON-LD
+(`BlogPosting`, etc.) en posts del blog, imágenes OG dinámicas por
+ruta y contenido expuesto en `llms.txt`/`llms-full.txt` para
+descubribilidad por asistentes de IA. La configuración central de metadata
+(nombre del sitio, descripción, URL canónica) vive en `lib/shared.ts`.
+
+## Contenido
+
+Los textos del perfil (`content/docs/*.mdx`) y del blog (`content/blog/*.mdx`)
+se editan directamente como MDX. El orden y las secciones visibles en `/docs`
+se controlan en `content/docs/meta.json`.
+
+## Enlaces
+
+- Sitio: https://petervargas.com
+- Proyecto principal: https://divisioncero.com
+- GitHub: https://github.com/PetterVargas
