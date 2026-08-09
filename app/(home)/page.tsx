@@ -2,10 +2,33 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { HeroReveal } from '@/components/home-animations';
 import { HeroUniverse } from '@/components/hero-universe';
+import { appName, appDescription, siteUrl, socialLinks } from '@/lib/shared';
+
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: appName,
+  url: siteUrl,
+  description: appDescription,
+  jobTitle: 'Ingeniero en Ciberseguridad',
+  nationality: 'Colombia',
+  sameAs: [
+    socialLinks.github,
+    socialLinks.linkedin,
+    socialLinks.x,
+    socialLinks.divisioncero,
+    socialLinks.instagram,
+    socialLinks.tiktok,
+  ],
+};
 
 export default function HomePage() {
   return (
     <div className="relative flex-1 flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
       <div className="fixed inset-0 -z-10 bg-gradient-to-br from-fd-primary/5 via-transparent to-fd-secondary/5 pointer-events-none" />
       <HeroUniverse className="fixed inset-0 -z-10 w-full h-full pointer-events-none opacity-70" />
       <HeroReveal>
@@ -15,7 +38,7 @@ export default function HomePage() {
             data-hero-line
             className="text-4xl font-extrabold tracking-tight leading-tight motion-safe:opacity-0"
           >
-            I&apos;m{' '}
+            Soy{' '}
             <Link href="/docs" className="text-emerald-400 hover:underline">
               <b>Peter Vargas</b>
             </Link>{' '}
@@ -28,52 +51,53 @@ export default function HomePage() {
         </div>
 
         <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
-          I learn every day, passionate about creating things that contribute to the world 🌎.
+          Aprendo cada día, apasionado por crear cosas que aporten al mundo 🌎.
         </p>
         <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
-          I&apos;m a cybersecurity engineer and I love my family;{' '}
-          I&apos;ve been a Detective Conan fan for as long as I can remember.
+          Soy Ingeniero en Ciberseguridad, y de lo que más me enorgullezco es de
+          mi hogar. Como hobby practico trekking; he sido fan de
+          Detective Conan desde que tengo memoria.
         </p>
         <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
-          I created 🧑🏻‍💻:
+          He creado 🧑🏻‍💻:
         </p>
         <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
           🛡️ ./
           <a href="https://divisioncero.com/?utm_source=petervargas.com&utm_medium=text_link&utm_campaign=personal_website" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
             <b>divisioncero </b>
           </a>
-          - Business project in my life; I want to make cybersecurity more accessible to anyone.
+          - Proyecto de negocio en mi vida; quiero hacer la ciberseguridad más accesible para cualquiera.
         </p>
         <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
           📖 ./
           <a href="https://kudo.divisioncero.com/?utm_source=petervargas.com&utm_medium=text_link&utm_campaign=personal_website" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
             <b>kudo </b>
           </a>
-          - The open-source and practical book on cybersecurity.
+          - El libro open-source y práctico sobre ciberseguridad.
         </p>
         <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
           🧑🏽‍🏫 ./
           <a href="https://cyberacademy.divisioncero.com/?utm_source=petervargas.com&utm_medium=text_link&utm_campaign=personal_website" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
             <b>cyberacademy </b>
           </a>
-          - The open-source and practical platform for learning cybersecurity.
+          - La plataforma open-source y práctica para aprender ciberseguridad.
         </p>
         <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
           🕵️‍♂️ ./
           <a href="https://app.divisioncero.com/home/conan?utm_source=petervargas.com&utm_medium=text_link&utm_campaign=personal_website" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
             <b>conan </b>
           </a>
-          - System for computer tracking of pedophiles, but it is genuinely useful for tracking any cybercrime.
+          - Sistema de rastreo informático de pedófilos, aunque realmente es útil para rastrear cualquier cibercrimen.
         </p>
         <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
           🛠️ ./
           <a href="https://herramientas.divisioncero.com/?utm_source=petervargas.com&utm_medium=text_link&utm_campaign=personal_website" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
-            <b>Other tools</b>
+            <b>Otras herramientas</b>
           </a>
-          - Various tools for Cybersecurity tasks and research.
+          - Varias herramientas para tareas diarias e investigación en ciberseguridad.
         </p>
         <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
-          Oh, I almost forgot, I love coffee and I was born in Colombia 🇨🇴 (Pereira and Caicedonia)
+          Ah, casi lo olvido, amo el ☕ y nací en Colombia 🇨🇴 (Pereira y Caicedonia)
         </p>
       </div>
       </HeroReveal>

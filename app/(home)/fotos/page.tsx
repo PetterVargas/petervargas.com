@@ -15,10 +15,10 @@ const dummyPhotos = [
   { seed: 'petervargas-9', width: 800, height: 1000 },
 ];
 
-const galleryPhotos: GalleryPhoto[] = dummyPhotos.map((photo) => ({
+const galleryPhotos: GalleryPhoto[] = dummyPhotos.map((photo, index) => ({
   src: `https://picsum.photos/seed/${photo.seed}/${photo.width}/${photo.height}`,
   zoomSrc: `https://picsum.photos/seed/${photo.seed}/${photo.width * 2}/${photo.height * 2}`,
-  alt: '',
+  alt: `Foto ${index + 1} de la galería de Peter Vargas`,
 }));
 
 export default function FotosPage() {
@@ -42,8 +42,25 @@ export default function FotosPage() {
 }
 
 export function generateMetadata(): Metadata {
+  const title = 'Fotos';
+  const description = 'Fotografía y viajes.';
+
   return {
-    title: 'Fotos | Peter Vargas',
-    description: 'Fotografía y viajes.',
+    title,
+    description,
+    alternates: {
+      canonical: '/fotos',
+    },
+    openGraph: {
+      title: `${title} | Peter Vargas`,
+      description,
+      url: '/fotos',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${title} | Peter Vargas`,
+      description,
+    },
   };
 }

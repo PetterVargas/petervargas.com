@@ -2,8 +2,9 @@ import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import { InlineTOC } from 'fumadocs-ui/components/inline-toc';
-import { blog } from '@/lib/source';
+import { blog, getBlogPageImage } from '@/lib/source';
 import { getMDXComponents } from '@/components/mdx';
+import { appName, siteUrl } from '@/lib/shared';
 import type { Metadata } from 'next';
 
 export default async function Page(props: {
@@ -15,8 +16,30 @@ export default async function Page(props: {
   if (!page) notFound();
   const Mdx = page.data.body;
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: page.data.title,
+    description: page.data.description,
+    datePublished: page.data.date,
+    author: {
+      '@type': 'Person',
+      name: page.data.author,
+    },
+    publisher: {
+      '@type': 'Person',
+      name: appName,
+    },
+    mainEntityOfPage: `${siteUrl}${page.url}`,
+    image: `${siteUrl}${getBlogPageImage(page).url}`,
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="w-full max-w-3xl mx-auto px-4 flex flex-col items-center pt-24 pb-12">
         <Link
           href="/blog"
@@ -60,8 +83,28 @@ export async function generateMetadata(props: {
   const page = blog.getPage([params.slug]);
   if (!page) notFound();
 
+  const imageUrl = getBlogPageImage(page).url;
+
   return {
-    title: `${page.data.title} | Peter Vargas`,
+    title: page.data.title,
     description: page.data.description,
+    alternates: {
+      canonical: page.url,
+    },
+    openGraph: {
+      title: page.data.title,
+      description: page.data.description,
+      url: page.url,
+      type: 'article',
+      publishedTime: page.data.date,
+      authors: [page.data.author],
+      images: [{ url: imageUrl, width: 1200, height: 630, alt: page.data.title }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: page.data.title,
+      description: page.data.description,
+      images: [imageUrl],
+    },
   };
 }

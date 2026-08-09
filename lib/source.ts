@@ -1,7 +1,13 @@
 import { docs, blogPosts } from 'collections/server';
 import { loader } from 'fumadocs-core/source';
 import { toFumadocsSource } from 'fumadocs-mdx/runtime/server';
-import { docsContentRoute, docsImageRoute, docsRoute, blogRoute } from './shared';
+import {
+  docsContentRoute,
+  docsImageRoute,
+  docsRoute,
+  blogRoute,
+  blogImageRoute,
+} from './shared';
 
 // See https://fumadocs.dev/docs/headless/source-api for more info
 export const source = loader({
@@ -21,6 +27,15 @@ export function getPageImage(page: (typeof source)['$inferPage']) {
   return {
     segments,
     url: `${docsImageRoute}/${segments.join('/')}`,
+  };
+}
+
+export function getBlogPageImage(page: (typeof blog)['$inferPage']) {
+  const segments = [...page.slugs, 'image.png'];
+
+  return {
+    segments,
+    url: `${blogImageRoute}/${segments.join('/')}`,
   };
 }
 
