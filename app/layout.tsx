@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { Provider } from '@/components/provider';
-import Script from 'next/script';
-import { appName } from '@/lib/shared';
+import { appName, appDescription, siteUrl } from '@/lib/shared';
 import './global.css';
 
 const inter = Inter({
@@ -10,9 +10,29 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: appName,
-  description: 'Cybersecurity engineer, fundador de DivisionCero.',
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: appName,
+    template: `%s | ${appName}`,
+  },
+  description: appDescription,
   manifest: '/site.webmanifest',
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    siteName: appName,
+    title: appName,
+    description: appDescription,
+    url: siteUrl,
+    locale: 'es_CO',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: appName,
+    description: appDescription,
+  },
   icons: {
     icon: [
       { url: '/favicon.ico' },
@@ -45,21 +65,10 @@ export const metadata: Metadata = {
 
 export default function Layout({ children }: LayoutProps<'/'>) {
   return (
-    <html lang="en" className={inter.className} suppressHydrationWarning>
+    <html lang="es" className={inter.className} suppressHydrationWarning>
       <body className="flex flex-col min-h-screen">
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-39QRST627Z"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-39QRST627Z');
-          `}
-        </Script>
         <Provider>{children}</Provider>
+        <GoogleAnalytics gaId="G-39QRST627Z" />
       </body>
     </html>
   );

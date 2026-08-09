@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { blog } from '@/lib/source';
+import { appName } from '@/lib/shared';
 import type { Metadata } from 'next';
 
 export default function BlogIndexPage() {
@@ -53,8 +54,25 @@ export default function BlogIndexPage() {
 }
 
 export function generateMetadata(): Metadata {
+  const title = 'Blog';
+  const description = 'Notas sobre ciberseguridad y lo que voy aprendiendo en el camino.';
+
   return {
-    title: 'Blog | Peter Vargas',
-    description: 'Notas sobre ciberseguridad y lo que voy aprendiendo en el camino.',
+    title,
+    description,
+    alternates: {
+      canonical: '/blog',
+    },
+    openGraph: {
+      title: `${title} | ${appName}`,
+      description,
+      url: '/blog',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${title} | ${appName}`,
+      description,
+    },
   };
 }
