@@ -3,6 +3,8 @@
 
 # generated content
 .source
+/downloads
+/public/fotos
 
 # test & build
 /coverage
@@ -24,3 +26,7 @@ yarn-error.log*
 .env*.local
 .vercel
 next-env.d.ts
+
+# unsplash
+.env
+!.env-example

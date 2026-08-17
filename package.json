@@ -6,6 +6,9 @@
     "build": "next build",
     "dev": "next dev",
     "start": "serve out",
+    "photos:fetch": "tsx scripts/fetch-photos.ts",
+    "photos:process": "tsx scripts/process-photos.ts",
+    "photos:update": "pnpm run photos:fetch && pnpm run photos:process",
     "types:check": "fumadocs-mdx && next typegen && tsc --noEmit",
     "postinstall": "fumadocs-mdx"
   },
@@ -28,9 +31,12 @@
     "@types/node": "^25.9.1",
     "@types/react": "^19.2.16",
     "@types/react-dom": "^19.2.3",
+    "dotenv": "^17.4.2",
     "postcss": "^8.5.15",
     "serve": "^14.2.6",
+    "sharp": "^0.35.3",
     "tailwindcss": "^4.3.0",
+    "tsx": "^4.23.11",
     "typescript": "^6.0.3"
   }
 }

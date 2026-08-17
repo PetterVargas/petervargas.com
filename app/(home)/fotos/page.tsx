@@ -1,25 +1,34 @@
+import fs from 'node:fs';
+import path from 'node:path';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import type { Metadata } from 'next';
 import { PhotoGallery, type GalleryPhoto } from '@/components/photo-gallery';
 
-const dummyPhotos = [
-  { seed: 'petervargas-1', width: 800, height: 1000 },
-  { seed: 'petervargas-2', width: 800, height: 600 },
-  { seed: 'petervargas-3', width: 800, height: 800 },
-  { seed: 'petervargas-4', width: 800, height: 600 },
-  { seed: 'petervargas-5', width: 800, height: 1000 },
-  { seed: 'petervargas-6', width: 800, height: 600 },
-  { seed: 'petervargas-7', width: 800, height: 800 },
-  { seed: 'petervargas-8', width: 800, height: 600 },
-  { seed: 'petervargas-9', width: 800, height: 1000 },
-];
+interface PhotoManifestEntry {
+  id: string;
+  alt: string;
+  credit: {
+    name: string;
+    profileUrl: string;
+  };
+}
 
-const galleryPhotos: GalleryPhoto[] = dummyPhotos.map((photo, index) => ({
-  src: `https://picsum.photos/seed/${photo.seed}/${photo.width}/${photo.height}`,
-  zoomSrc: `https://picsum.photos/seed/${photo.seed}/${photo.width * 2}/${photo.height * 2}`,
-  alt: `Foto ${index + 1} de la galería de Peter Vargas`,
-}));
+function getGalleryPhotos(): GalleryPhoto[] {
+  const manifestPath = path.join(process.cwd(), 'public/fotos/index.json');
+  if (!fs.existsSync(manifestPath)) return [];
+
+  const manifest: PhotoManifestEntry[] = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+
+  return manifest.map((photo) => ({
+    src: `/fotos/${photo.id}.webp`,
+    zoomSrc: `/fotos/${photo.id}-zoom.webp`,
+    alt: photo.alt,
+    credit: photo.credit,
+  }));
+}
+
+const galleryPhotos = getGalleryPhotos();
 
 export default function FotosPage() {
   return (
@@ -36,7 +45,14 @@ export default function FotosPage() {
         <h1 className="text-3xl font-bold tracking-tight mb-2">Foticos</h1>
       </div>
 
-      <PhotoGallery photos={galleryPhotos} />
+      {galleryPhotos.length > 0 ? (
+        <PhotoGallery photos={galleryPhotos} />
+      ) : (
+        <p className="text-center text-sm text-fd-muted-foreground">
+          Corre <code>pnpm run photos:update</code> (con <code>UNSPLASH_ACCESS_KEY</code> configurada)
+          para traer las fotos de la colección.
+        </p>
+      )}
     </main>
   );
 }
