@@ -39,7 +39,7 @@ export default function HomePage() {
             className="text-4xl font-extrabold tracking-tight leading-tight motion-safe:opacity-0"
           >
             Soy{' '}
-            <Link href="/docs" className="text-emerald-400 hover:underline">
+            <Link href="/proyectos" className="text-emerald-400 hover:underline">
               <b>Peter Vargas</b>
             </Link>{' '}
             🤘🏽
@@ -54,8 +54,7 @@ export default function HomePage() {
           Aprendo cada día, apasionado por crear cosas que aporten al mundo 🌎.
         </p>
         <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
-          Soy Ingeniero en Ciberseguridad, y de lo que más me enorgullezco es de
-          mi hogar. Como hobby practico trekking; he sido fan de
+          Soy Ingeniero en Ciberseguridad y hombre de familia. Como hobby practico trekking; he sido fan de
           Detective Conan desde que tengo memoria.
         </p>
         <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
@@ -63,35 +62,35 @@ export default function HomePage() {
         </p>
         <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
           🛡️ ./
-          <a href="https://divisioncero.com/?utm_source=petervargas.com&utm_medium=text_link&utm_campaign=personal_website" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
+          <a href="https://divisioncero.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
             <b>divisioncero </b>
           </a>
-          - Proyecto de negocio en mi vida; quiero hacer la ciberseguridad más accesible para cualquiera.
+          - Proyecto de negocio de mi vida; quiero hacer la ciberseguridad más accesible para cualquiera.
         </p>
         <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
           📖 ./
-          <a href="https://kudo.divisioncero.com/?utm_source=petervargas.com&utm_medium=text_link&utm_campaign=personal_website" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
+          <a href="https://kudo.divisioncero.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
             <b>kudo </b>
           </a>
-          - El libro open-source y práctico sobre ciberseguridad.
+          - Framework y libro open-source; práctico sobre ciberseguridad.
         </p>
         <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
           🧑🏽‍🏫 ./
-          <a href="https://cyberacademy.divisioncero.com/?utm_source=petervargas.com&utm_medium=text_link&utm_campaign=personal_website" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
+          <a href="https://cyberacademy.divisioncero.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
             <b>cyberacademy </b>
           </a>
           - La plataforma open-source y práctica para aprender ciberseguridad.
         </p>
         <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
           🕵️‍♂️ ./
-          <a href="https://app.divisioncero.com/home/conan?utm_source=petervargas.com&utm_medium=text_link&utm_campaign=personal_website" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
+          <a href="https://app.divisioncero.com/home/conan" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
             <b>conan </b>
           </a>
           - Sistema de rastreo informático de pedófilos, aunque realmente es útil para rastrear cualquier cibercrimen.
         </p>
         <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
           🛠️ ./
-          <a href="https://herramientas.divisioncero.com/?utm_source=petervargas.com&utm_medium=text_link&utm_campaign=personal_website" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
+          <a href="https://herramientas.divisioncero.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
             <b>Otras herramientas</b>
           </a>
           - Varias herramientas para tareas diarias e investigación en ciberseguridad.
@@ -110,7 +109,7 @@ const SocialIconsRow = () => {
     { name: 'GitHub', icon: '/icons/github.png', link: 'https://github.com/PetterVargas/' },
     { name: 'X', icon: '/icons/twitter-x.png', link: 'https://twitter.com/divisioncero/' },
     { name: 'LinkedIn', icon: '/icons/linkedin.png', link: 'https://www.linkedin.com/in/petervargas/' },
-    { name: 'DivisionCero', icon: '/icons/divisioncero.png', link: 'https://divisioncero.com/?utm_source=petervargas.com&utm_medium=social&utm_campaign=personal_website' },
+    { name: 'DivisionCero', icon: '/icons/divisioncero.png', link: 'https://divisioncero.com/' },
     { name: 'Instagram', icon: '/icons/instagram.png', link: 'https://www.instagram.com/divisioncero/' },
     { name: 'TikTok', icon: '/icons/tiktok.png', link: 'https://www.tiktok.com/@divisioncero/' },
     { name: 'Email', icon: '/icons/mail.png', link: 'mailto:peter.vargasg@gmail.com' },

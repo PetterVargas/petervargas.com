@@ -7,10 +7,11 @@ import { Camera, Moon, Sun } from 'lucide-react';
 import { useTheme } from 'fumadocs-ui/provider/base';
 
 const links = [
-  { name: 'Proyectos', href: '/docs/proyectos' },
+  { name: 'Proyectos', href: '/proyectos' },
   { name: 'Blog', href: '/blog' },
-  { name: 'Exp', title: 'Experiencia', href: '/docs/experiencia' },
-  { name: 'Edu', title: 'Educación', href: '/docs/educacion' },
+  { name: 'Exp', title: 'Experiencia', href: '/experiencia' },
+  { name: 'Edu', title: 'Educación', href: '/educacion' },
+  { name: 'Uses', title: 'Herramientas que uso', href: '/use' },
 ];
 
 const githubUrl = 'https://github.com/PetterVargas/';
