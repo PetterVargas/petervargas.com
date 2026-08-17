@@ -14,7 +14,7 @@ import { createRelativeLink } from 'fumadocs-ui/mdx';
 import { getBreadcrumbItems } from 'fumadocs-core/breadcrumb';
 import { gitConfig, siteUrl } from '@/lib/shared';
 
-export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
+export default async function Page(props: PageProps<'/[...slug]'>) {
   const params = await props.params;
   const page = source.getPage(params.slug);
   if (!page) notFound();
@@ -28,7 +28,6 @@ export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
 
   const breadcrumbItems = [
     { name: 'Home', url: '/' },
-    ...(page.url === '/docs' ? [] : [{ name: 'Docs', url: '/docs' }]),
     ...folderBreadcrumb,
     { name: page.data.title, url: page.url },
   ];
@@ -75,7 +74,7 @@ export async function generateStaticParams() {
   return source.generateParams();
 }
 
-export async function generateMetadata(props: PageProps<'/docs/[[...slug]]'>): Promise<Metadata> {
+export async function generateMetadata(props: PageProps<'/[...slug]'>): Promise<Metadata> {
   const params = await props.params;
   const page = source.getPage(params.slug);
   if (!page) notFound();
