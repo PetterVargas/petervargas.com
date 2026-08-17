@@ -54,8 +54,19 @@ export default function HomePage() {
           Aprendo cada día, apasionado por crear cosas que aporten al mundo 🌎.
         </p>
         <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
-          Soy Ingeniero en Ciberseguridad y hombre de familia. Como hobby practico trekking; mi banda favorita es
-          [WarCry](https://www.warcry.es/) y he sido fan de [Detective Conan](https://es.wikipedia.org/wiki/Detective_Conan) 
+          Soy Ingeniero en Ciberseguridad y hombre de familia. Como hobby practico trekking; mi banda favorita es{' '}
+          <a href="https://www.warcry.es/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
+            WarCry
+          </a>{' '}
+          y he sido fan de{' '}
+          <a
+            href="https://es.wikipedia.org/wiki/Detective_Conan"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-emerald-400 hover:underline"
+          >
+            Detective Conan
+          </a>{' '}
           desde que tengo memoria.
         </p>
         <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
