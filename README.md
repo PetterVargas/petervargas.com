@@ -31,6 +31,7 @@ Otros comandos:
 pnpm build         # build + export estático (carpeta `out/`)
 pnpm start          # sirve la carpeta `out/` generada
 pnpm types:check     # regenera tipos de Fumadocs y corre tsc --noEmit
+pnpm photos:update    # trae y procesa las fotos de Unsplash para /fotos (ver sección Fotos)
 ```
 
 ## Estructura del proyecto
@@ -41,13 +42,15 @@ app/
     page.tsx
     blog/
     fotos/
-  docs/           # Layout y páginas de documentación (Fumadocs)
+  (docs)/         # Layout y páginas de documentación (Fumadocs) — route group, sin
+                  # segmento en la URL: content/docs/*.mdx se sirve en la raíz
+                  # (/proyectos, /experiencia, /educacion, /use), no bajo /docs
   api/search/     # Route handler de búsqueda
   og/             # Generación de imágenes OG (docs/blog)
   llms.txt, llms-full.txt, llms.mdx/  # Salidas para consumo por LLMs
 
 content/
-  docs/           # index, proyectos, experiencia, educacion (MDX)
+  docs/           # proyectos, experiencia, educacion, use (MDX)
   blog/           # posts del blog (MDX)
 
 components/       # UI: nav flotante, hero, galería, animaciones, mdx, search
@@ -55,6 +58,10 @@ lib/
   source.ts        # adaptador de contenido (loader de Fumadocs)
   shared.ts         # metadata del sitio (nombre, descripción, URLs, redes)
   layout.shared.tsx  # opciones de layout compartidas
+
+scripts/
+  fetch-photos.ts    # descarga las fotos de la colección de Unsplash
+  process-photos.ts   # las redimensiona/comprime a .webp y genera public/fotos/index.json
 ```
 
 ### Secciones del sitio
@@ -62,12 +69,16 @@ lib/
 | Ruta                    | Descripción                                                        |
 | ------------------------ | ------------------------------------------------------------------- |
 | `/`                      | Landing page                                                        |
-| `/docs`                  | Perfil: proyectos, experiencia y educación                          |
+| `/proyectos`, `/experiencia`, `/educacion`, `/use` | Perfil (contenido de `content/docs/*.mdx`), servido en la raíz — sin prefijo `/docs` |
 | `/blog`                  | Notas sobre ciberseguridad, óptica personal y aprendizaje continuo   |
-| `/fotos`                 | Galería de fotos                                                     |
+| `/fotos`                 | Galería de fotos, tomadas de una colección de Unsplash              |
 | `/api/search`            | Endpoint de búsqueda (Fumadocs)                                     |
 | `/og/docs`, `/og/blog`   | Imágenes Open Graph generadas dinámicamente                         |
 | `/llms.txt`, `/llms-full.txt`, `/llms.mdx` | Contenido del sitio en formato apto para LLMs           |
+
+Las rutas `/docs/*` existieron en una versión anterior del sitio; `public/_redirects` las
+redirige (301) a su equivalente sin el prefijo, para no perder SEO de URLs ya indexadas ni
+dejar contenido duplicado.
 
 ## SEO
 
@@ -75,12 +86,13 @@ El sitio incluye buenas prácticas de SEO: metadata por página, JSON-LD
 (`BlogPosting`, etc.) en posts del blog, imágenes OG dinámicas por
 ruta y contenido expuesto en `llms.txt`/`llms-full.txt` para
 descubribilidad por asistentes de IA. La configuración central de metadata
-(nombre del sitio, descripción, URL canónica) vive en `lib/shared.ts`.
+(nombre del sitio, descripción, URL canónica) vive en `lib/shared.ts`. Las redirecciones
+301 de rutas legadas viven en `public/_redirects` (formato Cloudflare Pages).
 
 ## Contenido
 
 Los textos del perfil (`content/docs/*.mdx`) y del blog (`content/blog/*.mdx`)
-se editan directamente como MDX. El orden y las secciones visibles en `/docs`
+se editan directamente como MDX. El orden y las secciones visibles en el perfil
 se controlan en `content/docs/meta.json`.
 
 ## Enlaces
