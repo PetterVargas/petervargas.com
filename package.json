@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "pnpm run photos:update && next build",
+    "build": "next build",
     "dev": "next dev",
     "start": "serve out",
     "photos:fetch": "tsx scripts/fetch-photos.ts",
