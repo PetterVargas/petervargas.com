@@ -54,8 +54,9 @@ export default function HomePage() {
           Aprendo cada día, apasionado por crear cosas que aporten al mundo 🌎.
         </p>
         <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
-          Soy Ingeniero en Ciberseguridad y hombre de familia. Como hobby practico trekking; he sido fan de
-          Detective Conan desde que tengo memoria.
+          Soy Ingeniero en Ciberseguridad y hombre de familia. Como hobby practico trekking; mi banda favorita es
+          [WarCry](https://www.warcry.es/) y he sido fan de [Detective Conan](https://es.wikipedia.org/wiki/Detective_Conan) 
+          desde que tengo memoria.
         </p>
         <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
           He creado 🧑🏻‍💻:
@@ -65,7 +66,7 @@ export default function HomePage() {
           <a href="https://divisioncero.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
             <b>divisioncero </b>
           </a>
-          - Proyecto de negocio de mi vida; quiero hacer la ciberseguridad más accesible para cualquiera.
+          - Proyecto que espero que algún día sea rentable; quiero hacer la ciberseguridad más accesible para cualquiera.
         </p>
         <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
           📖 ./

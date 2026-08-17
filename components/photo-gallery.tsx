@@ -7,6 +7,10 @@ export interface GalleryPhoto {
   src: string;
   zoomSrc: string;
   alt: string;
+  credit?: {
+    name: string;
+    profileUrl: string;
+  };
 }
 
 export function PhotoGallery({ photos }: { photos: GalleryPhoto[] }) {
@@ -111,8 +115,34 @@ export function PhotoGallery({ photos }: { photos: GalleryPhoto[] }) {
             <ChevronRight className="h-9 w-9" />
           </button>
 
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-sm text-white/60">
-            {index + 1} / {photos.length}
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-sm text-white/60">
+            <span>
+              {index + 1} / {photos.length}
+            </span>
+            {photos[index].credit && (
+              <span>
+                Foto de{' '}
+                <a
+                  href={photos[index].credit!.profileUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="underline hover:text-white"
+                >
+                  {photos[index].credit!.name}
+                </a>{' '}
+                en{' '}
+                <a
+                  href="https://unsplash.com/?utm_source=petervargas.com&utm_medium=referral"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="underline hover:text-white"
+                >
+                  Unsplash
+                </a>
+              </span>
+            )}
           </div>
         </div>
       )}
