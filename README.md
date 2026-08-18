@@ -87,7 +87,7 @@ El sitio incluye buenas prácticas de SEO: metadata por página, JSON-LD
 ruta y contenido expuesto en `llms.txt`/`llms-full.txt` para
 descubribilidad por asistentes de IA. La configuración central de metadata
 (nombre del sitio, descripción, URL canónica) vive en `lib/shared.ts`. Las redirecciones
-301 de rutas legadas viven en `public/_redirects` (formato Cloudflare Pages).
+301 de rutas legadas viven en `public/_redirects` (formato Cloudflare Pages)
 
 ## Contenido
 
