@@ -56,7 +56,7 @@ export default function HomePage() {
         <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
           Soy Ingeniero en Ciberseguridad y hombre de familia. Como hobby practico trekking; mi banda favorita es{' '}
           <a href="https://www.warcry.es/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
-            WarCry
+            <b>WarCry</b>
           </a>{' '}
           y he sido fan de{' '}
           <a
@@ -65,7 +65,7 @@ export default function HomePage() {
             rel="noopener noreferrer"
             className="text-emerald-400 hover:underline"
           >
-            Detective Conan
+            <b>Detective Conan</b>
           </a>{' '}
           desde que tengo memoria.
         </p>
