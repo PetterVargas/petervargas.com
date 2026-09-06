@@ -35,6 +35,7 @@ export default function FotosPage() {
     <main className="flex flex-col flex-1 w-full max-w-3xl mx-auto px-4 pt-24 pb-12">
       <Link
         href="/"
+        title="Volver al inicio"
         className="mb-8 inline-flex w-fit items-center gap-1 text-sm text-fd-muted-foreground hover:text-fd-foreground hover:underline"
       >
         <ArrowLeft className="size-4" />

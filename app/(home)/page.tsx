@@ -9,6 +9,7 @@ const personJsonLd = {
   '@type': 'Person',
   name: appName,
   url: siteUrl,
+  image: `${siteUrl}/android-chrome-512x512.png`,
   description: appDescription,
   jobTitle: 'Ingeniero en Ciberseguridad',
   nationality: 'Colombia',
@@ -39,7 +40,11 @@ export default function HomePage() {
             className="text-4xl font-extrabold tracking-tight leading-tight motion-safe:opacity-0"
           >
             Soy{' '}
-            <Link href="/proyectos" className="text-emerald-400 hover:underline">
+            <Link
+              href="/proyectos"
+              title="Ver los proyectos de Peter Vargas"
+              className="text-emerald-400 hover:underline"
+            >
               <b>Peter Vargas</b>
             </Link>{' '}
             🤘🏽
@@ -55,7 +60,13 @@ export default function HomePage() {
         </p>
         <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
           Soy Ingeniero en Ciberseguridad y hombre de familia. Como hobby practico trekking; mi banda favorita es{' '}
-          <a href="https://www.warcry.es/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
+          <a
+            href="https://www.warcry.es/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="WarCry - Banda de heavy metal"
+            className="text-emerald-400 hover:underline"
+          >
             <b>WarCry</b>
           </a>{' '}
           y he sido fan de{' '}
@@ -63,6 +74,7 @@ export default function HomePage() {
             href="https://es.wikipedia.org/wiki/Detective_Conan"
             target="_blank"
             rel="noopener noreferrer"
+            title="Detective Conan en Wikipedia"
             className="text-emerald-400 hover:underline"
           >
             <b>Detective Conan</b>
@@ -74,35 +86,65 @@ export default function HomePage() {
         </p>
         <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
           🛡️ ./
-          <a href="https://divisioncero.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
+          <a
+            href="https://divisioncero.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="DivisionCero - Comunidad de Ciberseguridad"
+            className="text-emerald-400 hover:underline"
+          >
             <b>divisioncero </b>
           </a>
           - Proyecto que espero que algún día sea rentable; quiero hacer la ciberseguridad más accesible para cualquiera.
         </p>
         <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
           📖 ./
-          <a href="https://kudo.divisioncero.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
+          <a
+            href="https://kudo.divisioncero.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Kudo - Framework y libro open-source de ciberseguridad"
+            className="text-emerald-400 hover:underline"
+          >
             <b>kudo </b>
           </a>
           - Framework y libro open-source; práctico sobre ciberseguridad.
         </p>
         <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
           🧑🏽‍🏫 ./
-          <a href="https://cyberacademy.divisioncero.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
+          <a
+            href="https://cyberacademy.divisioncero.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="CyberAcademy - Plataforma para aprender ciberseguridad"
+            className="text-emerald-400 hover:underline"
+          >
             <b>cyberacademy </b>
           </a>
           - La plataforma open-source y práctica para aprender ciberseguridad.
         </p>
         <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
           🕵️‍♂️ ./
-          <a href="https://app.divisioncero.com/home/conan" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
+          <a
+            href="https://app.divisioncero.com/home/conan"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Conan - Sistema de rastreo de cibercrimen"
+            className="text-emerald-400 hover:underline"
+          >
             <b>conan </b>
           </a>
           - Sistema de rastreo informático de pedófilos, aunque realmente es útil para rastrear cualquier cibercrimen.
         </p>
         <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
           🛠️ ./
-          <a href="https://herramientas.divisioncero.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
+          <a
+            href="https://herramientas.divisioncero.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Herramientas de ciberseguridad de DivisionCero"
+            className="text-emerald-400 hover:underline"
+          >
             <b>Otras herramientas</b>
           </a>
           - Varias herramientas para tareas diarias e investigación en ciberseguridad.
@@ -135,11 +177,13 @@ const SocialIconsRow = () => {
           href={item.link}
           target="_blank"
           rel="noopener noreferrer"
+          title={`${item.name} de Peter Vargas`}
           className="transition-transform hover:scale-110"
         >
           <Image
             src={item.icon}
-            alt={item.name}
+            alt={`${item.name} de Peter Vargas`}
+            title={`${item.name} de Peter Vargas`}
             width={30}
             height={30}
             className="p-1 invert dark:invert-0"

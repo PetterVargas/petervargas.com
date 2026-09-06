@@ -1,6 +1,19 @@
 export const appName = 'Peter Vargas';
+export const appTitle = 'Peter Vargas - Ciberseguridad';
 export const appDescription =
-  'Ingeniero en Ciberseguridad y fundador de DivisionCero, Kudo y CyberAcademy.';
+  'Ingeniero en Ciberseguridad y fundador de DivisionCero, Kudo y CyberAcademy. Comparto proyectos, herramientas y aprendizajes sobre Ciberseguridad.';
+export const appKeywords = [
+  'Peter Vargas',
+  'Ciberseguridad',
+  'Ingeniero en Ciberseguridad',
+  'Seguridad informática',
+  'Hacking ético',
+  'Pentesting',
+  'DivisionCero',
+  'Kudo',
+  'CyberAcademy',
+  'Colombia',
+];
 export const siteUrl = 'https://petervargas.com';
 export const docsRoute = '';
 export const docsImageRoute = '/og/docs';

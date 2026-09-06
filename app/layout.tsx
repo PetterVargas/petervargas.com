@@ -2,35 +2,51 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Provider } from '@/components/provider';
-import { appName, appDescription, siteUrl } from '@/lib/shared';
+import { appName, appTitle, appDescription, appKeywords, siteUrl } from '@/lib/shared';
 import './global.css';
 
 const inter = Inter({
   subsets: ['latin'],
 });
 
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: appName,
+  url: siteUrl,
+  inLanguage: 'es',
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: appName,
+    default: appTitle,
     template: `%s | ${appName}`,
   },
   description: appDescription,
+  keywords: appKeywords,
   manifest: '/site.webmanifest',
+  authors: [{ name: appName, url: siteUrl }],
+  creator: appName,
+  publisher: 'divisioncero.com',
+  robots: {
+    index: true,
+    follow: true,
+  },
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     siteName: appName,
-    title: appName,
+    title: appTitle,
     description: appDescription,
     url: siteUrl,
     locale: 'es_CO',
   },
   twitter: {
     card: 'summary_large_image',
-    title: appName,
+    title: appTitle,
     description: appDescription,
   },
   icons: {
@@ -66,6 +82,12 @@ export const metadata: Metadata = {
 export default function Layout({ children }: LayoutProps<'/'>) {
   return (
     <html lang="es" className={inter.className} suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+      </head>
       <body className="flex flex-col min-h-screen">
         <Provider>{children}</Provider>
         <GoogleAnalytics gaId="G-39QRST627Z" />
