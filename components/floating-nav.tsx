@@ -7,8 +7,8 @@ import { Camera, Moon, Sun } from 'lucide-react';
 import { useTheme } from 'fumadocs-ui/provider/base';
 
 const links = [
-  { name: 'Proyectos', href: '/proyectos' },
-  { name: 'Blog', href: '/blog' },
+  { name: 'Proyectos', title: 'Proyectos de Peter Vargas', href: '/proyectos' },
+  { name: 'Blog', title: 'Blog de Peter Vargas', href: '/blog' },
   { name: 'Exp', title: 'Experiencia', href: '/experiencia' },
   { name: 'Edu', title: 'Educación', href: '/educacion' },
   { name: 'Uses', title: 'Herramientas que uso', href: '/use' },
@@ -59,7 +59,8 @@ export function FloatingNav() {
       >
         <Image
           src="/icons/github.png"
-          alt=""
+          alt="GitHub de Peter Vargas"
+          title="GitHub de Peter Vargas"
           width={16}
           height={16}
           className="invert dark:invert-0"

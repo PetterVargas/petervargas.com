@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { InlineTOC } from 'fumadocs-ui/components/inline-toc';
 import { blog, getBlogPageImage } from '@/lib/source';
 import { getMDXComponents } from '@/components/mdx';
-import { appName, siteUrl } from '@/lib/shared';
+import { siteUrl } from '@/lib/shared';
 import type { Metadata } from 'next';
 
 export default async function Page(props: {
@@ -27,8 +27,8 @@ export default async function Page(props: {
       name: page.data.author,
     },
     publisher: {
-      '@type': 'Person',
-      name: appName,
+      '@type': 'Organization',
+      name: 'divisioncero.com',
     },
     mainEntityOfPage: `${siteUrl}${page.url}`,
     image: `${siteUrl}${getBlogPageImage(page).url}`,
@@ -43,6 +43,7 @@ export default async function Page(props: {
       <div className="w-full max-w-3xl mx-auto px-4 flex flex-col items-center pt-24 pb-12">
         <Link
           href="/blog"
+          title="Volver al blog"
           className="mb-8 self-start inline-flex w-fit items-center gap-1 text-sm text-fd-muted-foreground hover:text-fd-foreground hover:underline"
         >
           <ArrowLeft className="size-4" />

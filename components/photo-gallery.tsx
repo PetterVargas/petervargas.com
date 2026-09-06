@@ -60,6 +60,7 @@ export function PhotoGallery({ photos }: { photos: GalleryPhoto[] }) {
             <img
               src={photo.src}
               alt={photo.alt}
+              title={photo.alt}
               className="w-full h-auto object-cover transition-transform hover:scale-105"
             />
           </button>
@@ -99,6 +100,7 @@ export function PhotoGallery({ photos }: { photos: GalleryPhoto[] }) {
             key={photos[index].zoomSrc}
             src={photos[index].zoomSrc}
             alt={photos[index].alt}
+            title={photos[index].alt}
             onClick={(e) => e.stopPropagation()}
             className="max-h-[90vh] max-w-[90vw] object-contain rounded-md"
           />
@@ -126,6 +128,7 @@ export function PhotoGallery({ photos }: { photos: GalleryPhoto[] }) {
                   href={photos[index].credit!.profileUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  title={`Perfil de ${photos[index].credit!.name} en Unsplash`}
                   onClick={(e) => e.stopPropagation()}
                   className="underline hover:text-white"
                 >
@@ -136,6 +139,7 @@ export function PhotoGallery({ photos }: { photos: GalleryPhoto[] }) {
                   href="https://unsplash.com/?utm_source=petervargas.com&utm_medium=referral"
                   target="_blank"
                   rel="noopener noreferrer"
+                  title="Unsplash"
                   onClick={(e) => e.stopPropagation()}
                   className="underline hover:text-white"
                 >
