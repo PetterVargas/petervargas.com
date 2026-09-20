@@ -67,17 +67,6 @@ description: Herramientas que uso día a día.
 
 - **Voxtype** — [voxtype.io](https://voxtype.io/ "voxtype.io"), para escribir con voz.
 
-### Grabación y edición de video
-
-- **OBS Studio** — [obsproject.com](https://obsproject.com/ "obsproject.com"), para grabar el escritorio, con el plugin [Zoom to Mouse](https://github.com/BlankSourceCode/obs-zoom-to-mouse "Zoom to Mouse").
-- **DaVinci Resolve** — [blackmagicdesign.com/products/davinciresolve](https://www.blackmagicdesign.com/products/davinciresolve "blackmagicdesign.com/products/davinciresolve").
-- **Wayscriber** — [wayscriber.com](https://wayscriber.com/ "wayscriber.com"), para dibujar sobre la pantalla.
-
-### Video programático
-
-- **Hyperframes** — [hyperframes.app](https://hyperframes.app/ "hyperframes.app").
-- **Remotion** — [remotion.dev](https://www.remotion.dev/ "remotion.dev").
-
 ### Imágenes
 
 - **Unsplash** — [unsplash.com](https://unsplash.com/ "unsplash.com"), para el manejo de imágenes.
@@ -104,6 +93,78 @@ description: Herramientas que uso día a día.
 
 - **Blog de notas** — lo uso todo el tiempo para apuntes.
 
----
+### Grabación y edición de video
 
-Son muchas más, pero estas son las que más utilizo.
+- **OBS Studio** — [obsproject.com](https://obsproject.com/ "obsproject.com"), para grabar el escritorio, con el plugin [Zoom to Mouse](https://github.com/BlankSourceCode/obs-zoom-to-mouse "Zoom to Mouse").
+- **DaVinci Resolve** — [blackmagicdesign.com/products/davinciresolve](https://www.blackmagicdesign.com/products/davinciresolve "blackmagicdesign.com/products/davinciresolve").
+- **Wayscriber** — [wayscriber.com](https://wayscriber.com/ "wayscriber.com"), para dibujar sobre la pantalla.
+
+#### Video programático
+
+- **Hyperframes** — [hyperframes.app](https://hyperframes.app/ "hyperframes.app").
+- **Remotion** — [remotion.dev](https://www.remotion.dev/ "remotion.dev").
+
+#### OBS Studio — Configuración
+
+Configuración personal para grabación de tutoriales técnicos, YouTube y Udemy.
+
+#### Video
+
+- Resolución: **1920×1080**
+- FPS: **60**
+- Encoder: **NVIDIA NVENC H.264**
+- Rate Control: **CQP**
+- CQP: **18**
+- Keyframe Interval: **2 s**
+- Preset: **P5 Slow (Good Quality)**
+- Tuning: **High Quality**
+- Multipass: **Two Passes (Quarter Resolution)**
+- Profile: **High**
+- Look-ahead: **Disabled**
+- Adaptive Quantization: **Enabled**
+- B-Frames: **2**
+- Formato de grabación: **MKV**
+
+#### Captura
+
+- Sesión gráfica: **Wayland**
+- Fuente: **Screen Capture (PipeWire)**
+- Seleccionar manualmente el monitor que se desea grabar.
+
+#### Audio
+
+- Frecuencia: **48 kHz**
+- Canales: **Stereo**
+- Micrófono: **Default**
+- Audio del escritorio: **Default**
+
+##### Pistas
+
+| Pista | Contenido |
+|---|---|
+| 1 | Desktop Audio + Mic/Aux |
+| 2 | Mic/Aux |
+| 3 | Desktop Audio |
+
+- Audio Monitoring: **Monitor Off**
+
+#### Micrófono
+
+Filtros:
+
+1. **Noise Suppression — RNNoise**
+2. **Expander**
+   - Ratio: 3:1
+   - Threshold: -40 dB
+   - Attack: 5 ms
+   - Release: 100 ms
+3. **Compressor**
+   - Ratio: 3:1
+   - Threshold: -18 dB
+   - Attack: 6 ms
+   - Release: 60 ms
+4. **Limiter**
+   - Threshold: -3 dB
+   - Release: 60 ms
+
+---
