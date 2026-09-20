@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import { InlineTOC } from 'fumadocs-ui/components/inline-toc';
 import { blog, getBlogPageImage } from '@/lib/source';
@@ -15,6 +15,16 @@ export default async function Page(props: {
 
   if (!page) notFound();
   const Mdx = page.data.body;
+
+  const sortedPosts = [...blog.getPages()].sort(
+    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+  );
+  const currentIndex = sortedPosts.findIndex((post) => post.url === page.url);
+  const newerPost = currentIndex > 0 ? sortedPosts[currentIndex - 1] : undefined;
+  const olderPost =
+    currentIndex >= 0 && currentIndex < sortedPosts.length - 1
+      ? sortedPosts[currentIndex + 1]
+      : undefined;
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -66,6 +76,45 @@ export default async function Page(props: {
           <InlineTOC items={page.data.toc} />
           <Mdx components={getMDXComponents()} />
         </div>
+
+        {(olderPost || newerPost) && (
+          <nav
+            aria-label="Navegación entre posts"
+            className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-fd-border pt-6"
+          >
+            {olderPost ? (
+              <Link
+                href={olderPost.url}
+                title={olderPost.data.title}
+                className="group flex flex-col gap-1 rounded-lg border bg-fd-card p-4 transition-colors hover:border-fd-foreground/20 hover:bg-fd-accent/50"
+              >
+                <span className="inline-flex items-center gap-1 text-xs text-fd-muted-foreground">
+                  <ArrowLeft className="size-3.5" />
+                  Anterior
+                </span>
+                <span className="font-medium group-hover:underline">{olderPost.data.title}</span>
+              </Link>
+            ) : (
+              <div />
+            )}
+
+            {newerPost ? (
+              <Link
+                href={newerPost.url}
+                title={newerPost.data.title}
+                className="group flex flex-col gap-1 rounded-lg border bg-fd-card p-4 text-right transition-colors hover:border-fd-foreground/20 hover:bg-fd-accent/50 sm:items-end"
+              >
+                <span className="inline-flex items-center gap-1 text-xs text-fd-muted-foreground">
+                  Siguiente
+                  <ArrowRight className="size-3.5" />
+                </span>
+                <span className="font-medium group-hover:underline">{newerPost.data.title}</span>
+              </Link>
+            ) : (
+              <div />
+            )}
+          </nav>
+        )}
       </article>
     </>
   );
