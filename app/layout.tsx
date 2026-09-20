@@ -25,7 +25,6 @@ export const metadata: Metadata = {
   },
   description: appDescription,
   keywords: appKeywords,
-  manifest: '/site.webmanifest',
   authors: [{ name: appName, url: siteUrl }],
   creator: appName,
   publisher: 'divisioncero.com',
