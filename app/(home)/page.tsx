@@ -5,6 +5,13 @@ import { HeroReveal } from '@/components/home-animations';
 import { HeroUniverse } from '@/components/hero-universe';
 import { appName, appDescription, siteUrl, socialLinks } from '@/lib/shared';
 
+const divisionCero = {
+  '@type': 'Organization',
+  name: 'DivisionCero',
+  url: socialLinks.divisioncero,
+  sameAs: [socialLinks.x, socialLinks.instagram, socialLinks.tiktok],
+};
+
 const personJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
@@ -13,14 +20,32 @@ const personJsonLd = {
   image: `${siteUrl}/android-chrome-512x512.png`,
   description: appDescription,
   jobTitle: 'Ingeniero en Ciberseguridad',
-  nationality: 'Colombia',
-  sameAs: [
-    socialLinks.github,
-    socialLinks.linkedin,
-    socialLinks.x,
-    socialLinks.divisioncero,
-    socialLinks.instagram,
-    socialLinks.tiktok,
+  nationality: { '@type': 'Country', name: 'Colombia' },
+  // Solo perfiles personales; las redes de DivisionCero van en `worksFor`.
+  sameAs: [socialLinks.github, socialLinks.linkedin],
+  worksFor: [
+    divisionCero,
+    { '@type': 'Organization', name: 'Siigo', url: 'https://www.siigo.com' },
+  ],
+  founder: divisionCero,
+  alumniOf: [
+    { '@type': 'CollegeOrUniversity', name: 'UNIR Universidad Internacional de la Rioja' },
+    { '@type': 'CollegeOrUniversity', name: 'Universidad Nacional Abierta y a Distancia' },
+    { '@type': 'EducationalOrganization', name: 'Policía Nacional - Escuela Carlos Eugenio Restrepo' },
+  ],
+  award: [
+    'Medalla Mayor Pedro Alejandro Rojas Betancourt (2011 y 2021)',
+    'Condecoración Servicios Distinguidos, clase especial (2019)',
+    'Mención Honorífica de la Policía Nacional de Colombia (2018)',
+  ],
+  knowsAbout: [
+    'Ciberseguridad',
+    'Investigación de cibercrimen',
+    'Informática forense',
+    'Respuesta a incidentes',
+    'DevSecOps',
+    'Seguridad en la nube',
+    'Zero Trust',
   ],
 };
 
@@ -49,6 +74,7 @@ export default function HomePage() {
               <b>Peter Vargas</b>
             </Link>{' '}
             🤘🏽
+            <span className="sr-only">, Ingeniero en Ciberseguridad</span>
           </h1>
         </div>
 

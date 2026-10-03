@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import {
+  Award,
   Briefcase,
   Camera,
   GraduationCap,
@@ -21,6 +22,7 @@ const links = [
   { title: 'Servicios de Peter Vargas', href: '/servicios', icon: Handshake },
   { title: 'Experiencia', href: '/experiencia', icon: Briefcase },
   { title: 'Educación', href: '/educacion', icon: GraduationCap },
+  { title: 'Reconocimientos', href: '/reconocimientos', icon: Award },
   { title: 'Herramientas que uso', href: '/use', icon: Wrench },
   { title: 'Blog de Peter Vargas', href: '/blog', icon: Newspaper },
 ];
