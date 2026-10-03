@@ -40,6 +40,7 @@ export default function BlogIndexPage() {
             <h2 className="text-lg font-semibold mb-1">{post.data.title}</h2>
             <p className="text-xs text-fd-muted-foreground mb-2">
               {new Date(post.data.date).toLocaleDateString('es-ES', {
+                timeZone: 'UTC',
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric',
@@ -57,7 +58,7 @@ export default function BlogIndexPage() {
 
 export function generateMetadata(): Metadata {
   const title = 'Blog';
-  const description = 'Notas sobre ciberseguridad y lo que voy aprendiendo en el camino.';
+  const description = 'Notas personales sobre ideas, sociedad, familia, política y ciberseguridad.';
 
   return {
     title,
