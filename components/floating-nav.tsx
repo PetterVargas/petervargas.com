@@ -38,7 +38,7 @@ export function FloatingNav() {
   return (
     <nav
       aria-label="Principal"
-      className="fixed top-4 right-4 sm:top-6 sm:right-6 z-50 flex items-center gap-3 sm:gap-5 rounded-full border border-fd-border bg-fd-background/80 backdrop-blur-md px-4 py-2 sm:px-6 sm:py-2.5 text-sm shadow-sm max-w-[calc(100vw-2rem)] overflow-x-auto"
+      className="fixed top-4 right-4 sm:top-6 sm:right-6 z-50 flex items-center gap-2.5 sm:gap-3.5 rounded-full border border-fd-border bg-fd-background/80 backdrop-blur-md px-4 py-2 sm:px-6 sm:py-2.5 text-sm shadow-sm max-w-[calc(100vw-2rem)] overflow-x-auto"
     >
       <Link
         href="/"
@@ -60,8 +60,6 @@ export function FloatingNav() {
           {item.icon ? <item.icon className="h-4 w-4" /> : item.name}
         </Link>
       ))}
-
-      <span className="h-4 w-px bg-fd-border shrink-0" aria-hidden />
 
       <Link
         href="/fotos"
