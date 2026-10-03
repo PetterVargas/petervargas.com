@@ -65,6 +65,7 @@ export default async function Page(props: {
         <span className="text-sm text-fd-muted-foreground">
           By {page.data.author} &middot;{' '}
           {new Date(page.data.date).toLocaleDateString('es-ES', {
+            timeZone: 'UTC',
             day: 'numeric',
             month: 'long',
             year: 'numeric',

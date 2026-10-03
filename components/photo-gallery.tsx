@@ -56,7 +56,7 @@ export function PhotoGallery({ photos }: { photos: GalleryPhoto[] }) {
             aria-label={`Ver foto ${i + 1} de ${photos.length}`}
             className="block w-full break-inside-avoid overflow-hidden rounded-lg border border-fd-border"
           >
-            {/* eslint-disable-next-line @next/next/no-img-element -- these are placeholder photos loaded from picsum, not project assets */}
+            {/* eslint-disable-next-line @next/next/no-img-element -- Unsplash photos pre-processed by scripts/process-photos.ts */}
             <img
               src={photo.src}
               alt={photo.alt}
@@ -95,7 +95,7 @@ export function PhotoGallery({ photos }: { photos: GalleryPhoto[] }) {
             <ChevronLeft className="h-9 w-9" />
           </button>
 
-          {/* eslint-disable-next-line @next/next/no-img-element -- placeholder photo, full-screen viewer needs a plain img */}
+          {/* eslint-disable-next-line @next/next/no-img-element -- full-screen viewer needs a plain img */}
           <img
             key={photos[index].zoomSrc}
             src={photos[index].zoomSrc}

@@ -34,9 +34,12 @@ const personJsonLd = {
     { '@type': 'EducationalOrganization', name: 'Policía Nacional - Escuela Carlos Eugenio Restrepo' },
   ],
   award: [
-    'Medalla Mayor Pedro Alejandro Rojas Betancourt (2011 y 2021)',
+    'Siigo Hero - Reconocimiento Cultura Siigo, categoría Líder (2023)',
+    'Distintivo Dirección de Investigación Criminal (2021)',
     'Condecoración Servicios Distinguidos, clase especial (2019)',
-    'Mención Honorífica de la Policía Nacional de Colombia (2018)',
+    'Mención Honorífica III de la Policía Nacional de Colombia (2012, 2015 y 2018)',
+    'Distintivo Citación Presidencial de la Victoria Militar y Policial (2016)',
+    'Medalla Mayor Pedro Alejandro Rojas Betancourt (2011)',
   ],
   knowsAbout: [
     'Ciberseguridad',
@@ -202,7 +205,7 @@ const SocialIconsRow = () => {
       ),
       link: 'https://discord.com/invite/RPxQTPBfvG',
     },
-    { name: 'Email', icon: '/icons/mail.png', link: 'mailto:peter.vargasg@gmail.com' },
+    { name: 'Email', icon: '/icons/mail.png', link: 'mailto:hola@petervargas.com' },
   ];
 
   return (
