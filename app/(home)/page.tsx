@@ -106,7 +106,15 @@ export default function HomePage() {
           ))}
         </ul>
         <p data-hero-item className="my-5 text-base leading-[1.75] motion-safe:opacity-0">
-          Como hobby practico trekking; mi banda favorita es{' '}
+          Como hobby practico{' '}
+          <Link
+            href="/fotos"
+            title="Ver fotos de trekking de Peter Vargas"
+            className="text-emerald-400 hover:underline"
+          >
+            <b>trekking</b>
+          </Link>
+          ; mi banda favorita es{' '}
           <a
             href="https://www.warcry.es/"
             target="_blank"
