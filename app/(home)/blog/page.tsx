@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { blog } from '@/lib/source';
-import { appName } from '@/lib/shared';
+import { appName, homeImageRoute, openGraphDefaults } from '@/lib/shared';
 import type { Metadata } from 'next';
 
 export default function BlogIndexPage() {
@@ -67,15 +67,18 @@ export function generateMetadata(): Metadata {
       canonical: '/blog',
     },
     openGraph: {
+      ...openGraphDefaults,
       title: `${title} | ${appName}`,
       description,
       url: '/blog',
       type: 'website',
+      images: homeImageRoute,
     },
     twitter: {
       card: 'summary_large_image',
       title: `${title} | ${appName}`,
       description,
+      images: homeImageRoute,
     },
   };
 }
