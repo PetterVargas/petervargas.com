@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import type { Metadata } from 'next';
 import { PhotoGallery, type GalleryPhoto } from '@/components/photo-gallery';
+import { homeImageRoute, openGraphDefaults } from '@/lib/shared';
 
 interface PhotoManifestEntry {
   id: string;
@@ -60,7 +61,7 @@ export default function FotosPage() {
 
 export function generateMetadata(): Metadata {
   const title = 'Fotos';
-  const description = 'Fotografía y viajes.';
+  const description = 'Fotografía y viajes: galería personal de Peter Vargas con su colección de fotos publicadas en Unsplash.';
 
   return {
     title,
@@ -69,15 +70,18 @@ export function generateMetadata(): Metadata {
       canonical: '/fotos',
     },
     openGraph: {
+      ...openGraphDefaults,
       title: `${title} | Peter Vargas`,
       description,
       url: '/fotos',
       type: 'website',
+      images: homeImageRoute,
     },
     twitter: {
       card: 'summary_large_image',
       title: `${title} | Peter Vargas`,
       description,
+      images: homeImageRoute,
     },
   };
 }

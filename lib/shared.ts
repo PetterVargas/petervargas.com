@@ -15,6 +15,15 @@ export const appKeywords = [
   'Colombia',
 ];
 export const siteUrl = 'https://petervargas.com';
+export const homeImageRoute = '/og/home/image.png';
+
+// Next.js reemplaza `openGraph` completo por segmento (no lo fusiona con el
+// layout), así que cada página debe repetir estos valores o se pierden.
+export const openGraphDefaults = {
+  siteName: appName,
+  locale: 'es_CO',
+} as const;
+
 export const docsRoute = '';
 export const docsImageRoute = '/og/docs';
 export const docsContentRoute = '/llms.mdx/docs';

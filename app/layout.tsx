@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Provider } from '@/components/provider';
-import { appName, appTitle, appDescription, appKeywords, siteUrl } from '@/lib/shared';
+import { appName, appTitle, appDescription, appKeywords, homeImageRoute, siteUrl } from '@/lib/shared';
 import './global.css';
 
 const inter = Inter({
@@ -28,10 +28,6 @@ export const metadata: Metadata = {
   authors: [{ name: appName, url: siteUrl }],
   creator: appName,
   publisher: 'divisioncero.com',
-  robots: {
-    index: true,
-    follow: true,
-  },
   alternates: {
     canonical: '/',
   },
@@ -42,11 +38,13 @@ export const metadata: Metadata = {
     description: appDescription,
     url: siteUrl,
     locale: 'es_CO',
+    images: homeImageRoute,
   },
   twitter: {
     card: 'summary_large_image',
     title: appTitle,
     description: appDescription,
+    images: homeImageRoute,
   },
   icons: {
     icon: [

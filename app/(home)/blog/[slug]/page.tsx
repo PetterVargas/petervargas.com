@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { InlineTOC } from 'fumadocs-ui/components/inline-toc';
 import { blog, getBlogPageImage } from '@/lib/source';
 import { getMDXComponents } from '@/components/mdx';
-import { siteUrl } from '@/lib/shared';
+import { openGraphDefaults, siteUrl } from '@/lib/shared';
 import type { Metadata } from 'next';
 
 export default async function Page(props: {
@@ -143,6 +143,7 @@ export async function generateMetadata(props: {
       canonical: page.url,
     },
     openGraph: {
+      ...openGraphDefaults,
       title: page.data.title,
       description: page.data.description,
       url: page.url,
