@@ -13,13 +13,13 @@
     "postinstall": "fumadocs-mdx"
   },
   "dependencies": {
-    "@next/third-parties": "^16.4.0",
+    "@next/third-parties": "^16.4.3",
     "fumadocs-core": "16.16.2",
     "fumadocs-mdx": "15.4.6",
     "fumadocs-ui": "16.16.2",
     "gsap": "^3.15.0",
     "lucide-react": "^1.53.0",
-    "next": "16.4.0",
+    "next": "16.4.3",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
     "tailwind-merge": "^3.7.0",

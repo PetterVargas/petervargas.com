@@ -156,14 +156,14 @@ const proyectos = [
   {
     icon: '📖',
     name: 'kudo',
-    href: 'https://kudo.divisioncero.com/',
+    href: 'https://divisioncero.com/kudo',
     title: 'Kudo - Framework y libro open-source de ciberseguridad',
     description: 'Framework y libro open-source; práctico sobre ciberseguridad.',
   },
   {
     icon: '🧑🏽‍🏫',
     name: 'cyberacademy',
-    href: 'https://cyberacademy.divisioncero.com/',
+    href: 'https://divisioncero.com/cyberacademy',
     title: 'CyberAcademy - Plataforma para aprender ciberseguridad',
     description: 'La plataforma open-source y práctica para aprender ciberseguridad.',
   },
@@ -177,7 +177,7 @@ const proyectos = [
   {
     icon: '🛠️',
     name: 'Otras herramientas',
-    href: 'https://herramientas.divisioncero.com/',
+    href: 'https://divisioncero.com/herramientas',
     title: 'Herramientas de ciberseguridad de DivisionCero',
     description: 'Varias herramientas para tareas diarias e investigación en ciberseguridad.',
   },
