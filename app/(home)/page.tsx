@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { HeroReveal } from '@/components/home-animations';
-import { HeroUniverse } from '@/components/hero-universe';
+import { HeroGrid } from '@/components/hero-grid';
 import { appName, appDescription, siteUrl, socialLinks } from '@/lib/shared';
 
 const divisionCero = {
@@ -60,7 +60,7 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
       />
       <div className="fixed inset-0 -z-10 bg-gradient-to-br from-fd-primary/5 via-transparent to-fd-secondary/5 pointer-events-none" />
-      <HeroUniverse className="fixed inset-0 -z-10 w-full h-full pointer-events-none opacity-70" />
+      <HeroGrid className="fixed inset-0 -z-10 w-full h-full pointer-events-none [mask-image:radial-gradient(ellipse_at_center,black_35%,transparent_85%)]" />
       <HeroReveal>
       <div className="max-w-[65ch] w-full mx-auto flex-1 px-6 pt-36 sm:pt-40 pb-10">
         <div className="overflow-hidden mb-6">
